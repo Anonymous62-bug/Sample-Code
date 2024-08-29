@@ -66,13 +66,13 @@ plot_volcano <- function(dea,dir_path){
 #sample1	GroupA	batch1
 #sample2	GroupB	batch1
 
-comparison <- read_tsv("args[1]", col_names=T) %>%
+comparison <- read_tsv(args[1], col_names=T) %>%
 	data.frame()
-counts <- read_tsv("args[2]", col_names=T) %>%
+counts <- read_tsv(args[2], col_names=T) %>%
 	column_to_rownames(var = "geneid") %>%
 	as.matrix()
 counts <- tail(counts, -4)
-samples <- read_tsv("args[3]", col_names=T) %>%
+samples <- read_tsv(args[3], col_names=T) %>%
 	data.frame()
 rownames(samples) <- samples$sample
 
